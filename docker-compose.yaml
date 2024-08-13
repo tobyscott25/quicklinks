@@ -1,0 +1,11 @@
+services:
+  quick-links:
+    image: cosmtrek/air:v1.52.3 # Uses Go 1.22.4
+    working_dir: /app
+    volumes:
+      - .:/app
+      - ./redirects.yaml:/app/redirects.yaml
+    ports:
+      - 8080:8080
+    environment:
+      - AIR_WATCHER_DELAY=1s
